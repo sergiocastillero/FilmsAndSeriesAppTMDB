@@ -9,7 +9,6 @@ public class searchFilmModel {
     public int getPage() {
         return page;
     }
-
     public ArrayList<Film> getResults() {
         return results;
     }

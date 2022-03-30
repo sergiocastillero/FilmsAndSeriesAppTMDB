@@ -3,6 +3,7 @@ package com.example.fragments.Recyclers;
 
 import static com.example.fragments.Config.DefaultConstants.BASE_IMG_URL;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -42,7 +43,7 @@ public class SearchMovieRecyclerViewAdapter extends RecyclerView.Adapter<SearchM
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int i) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int i) {
 
         holder.titleMovie.setText(arrayMovies.get(i).getOriginal_title());
         String imageURL = BASE_IMG_URL + arrayMovies.get(i).getPoster_path();
@@ -61,7 +62,6 @@ public class SearchMovieRecyclerViewAdapter extends RecyclerView.Adapter<SearchM
                 bundle.putSerializable("Film", film);
 
                 AppCompatActivity app = (AppCompatActivity) view.getContext();
-
                 DetailFragment detailFragment = new DetailFragment();
                 detailFragment.setArguments(bundle);
 

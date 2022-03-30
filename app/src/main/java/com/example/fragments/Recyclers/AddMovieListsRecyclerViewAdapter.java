@@ -1,26 +1,16 @@
 package com.example.fragments.Recyclers;
 
 
-import static com.example.fragments.Config.DefaultConstants.BASE_IMG_URL;
-
 import android.content.Context;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.fragments.Config.GlideApp;
-import com.example.fragments.DetailFragment;
-import com.example.fragments.Model.Film.Film;
 import com.example.fragments.Model.List.List;
 import com.example.fragments.R;
 

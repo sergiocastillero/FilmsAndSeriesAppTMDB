@@ -29,7 +29,7 @@ import retrofit2.Response;
 public class SearchFragment extends Fragment {
 
     public View view;
-    RecyclerView recyclerView;
+    RecyclerView recyclerView_search;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -43,7 +43,7 @@ public class SearchFragment extends Fragment {
 
         TextView txtSearch = view.findViewById(R.id.txtList);
         ImageButton btnSearch = view.findViewById(R.id.btnSearch);
-        recyclerView = view.findViewById(R.id.recyclerSearch);
+        recyclerView_search = view.findViewById(R.id.recyclerSearch);
 
 
         btnSearch.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +54,7 @@ public class SearchFragment extends Fragment {
                 if(!query.equals("")){
 
                     ApiCall apiCall = retrofit.create(ApiCall.class);
-                    Call<searchFilmModel> call = apiCall.getData(API_KEY, query);
+                    Call<searchFilmModel> call = apiCall.getSearch(API_KEY, query);
 
                     call.enqueue(new Callback<searchFilmModel>(){
                         @Override
@@ -83,7 +83,7 @@ public class SearchFragment extends Fragment {
 
     public void callRecycler(ArrayList<Film> arraySearch){
         SearchMovieRecyclerViewAdapter adapter = new SearchMovieRecyclerViewAdapter(arraySearch, getContext());
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),3));
-        recyclerView.setAdapter(adapter);
+        recyclerView_search.setLayoutManager(new GridLayoutManager(getContext(),3));
+        recyclerView_search.setAdapter(adapter);
     }
 }

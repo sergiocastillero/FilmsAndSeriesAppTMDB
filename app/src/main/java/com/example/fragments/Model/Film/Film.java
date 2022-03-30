@@ -3,12 +3,14 @@ package com.example.fragments.Model.Film;
 import java.io.Serializable;
 
 public class Film implements Serializable {
-    public String original_title;
-    public double vote_average;
-    public String poster_path;
-    public int id;
-    public String overview;
-    public String release_date;
+    private int id;
+    private String original_title;
+    private double vote_average;
+    private String poster_path;
+    private String overview;
+    private String release_date;
+    private FavFilmRequest state;
+
 
     public String getOriginal_title() {
         return original_title;
@@ -32,5 +34,9 @@ public class Film implements Serializable {
 
     public String getRelease_date() {
         return release_date;
+    }
+
+    public FavFilmRequest getState() {
+        return state;
     }
 }

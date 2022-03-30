@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
 
                 case R.id.nav_fav:
-                    selectedFragment = new MoviesListFragment("Favourite movies");
+                    selectedFragment = new FavoriteFragment("Favourite movies");
                     break;
             }
 
